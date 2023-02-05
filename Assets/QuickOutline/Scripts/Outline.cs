@@ -54,13 +54,13 @@ public class Outline : MonoBehaviour {
   }
 
   [SerializeField]
-  private Mode outlineMode;
+  private Mode outlineMode = Mode.OutlineVisible;
 
   [SerializeField]
-  private Color outlineColor = Color.white;
+  private Color outlineColor = Color.yellow;
 
   [SerializeField, Range(0f, 10f)]
-  private float outlineWidth = 2f;
+  private float outlineWidth = 10f;
 
   [Header("Optional")]
 
@@ -79,6 +79,20 @@ public class Outline : MonoBehaviour {
   private Material outlineFillMaterial;
 
   private bool needsUpdate;
+  
+  // --------------------------------------------------------
+  // Added by Pawel
+  
+  private void OnMouseEnter()
+  {
+    enabled = true;
+  }
+
+  private void OnMouseExit()
+  {
+    enabled = false;
+  }
+  // --------------------------------------------------------
 
   void Awake() {
 
@@ -97,6 +111,9 @@ public class Outline : MonoBehaviour {
 
     // Apply material properties immediately
     needsUpdate = true;
+    
+    // Added by Pawel
+    enabled = false;
   }
 
   void OnEnable() {
