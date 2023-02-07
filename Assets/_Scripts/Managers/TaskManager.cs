@@ -25,7 +25,6 @@ public class TaskManager : MonoBehaviour
         }
         
         I = this;
-        enabled = false;
     }
 
     private void OnEnable()
@@ -52,7 +51,6 @@ public class TaskManager : MonoBehaviour
     private void OnDisable()
     {
         //ToDo: Show end cart
-        
     }
 
     // ----- Functions -----
