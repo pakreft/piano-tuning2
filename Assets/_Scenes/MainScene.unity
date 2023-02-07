@@ -3099,7 +3099,7 @@ GameObject:
   - component: {fileID: 856598031}
   - component: {fileID: 856598032}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: UIButtonCallbacks
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3132,16 +3132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f980ec3b2ed16b46a785fa9aa090c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  trainingButton: {fileID: 0}
-  demoButton: {fileID: 0}
-  exitButton: {fileID: 0}
-  menuButton: {fileID: 0}
-  showHintButton: {fileID: 0}
-  backButton: {fileID: 0}
-  stepForwardButton: {fileID: 0}
-  stepBackwardsButton: {fileID: 0}
-  restartButton: {fileID: 0}
-  inGameMenu: {fileID: 0}
 --- !u!1 &868967483
 GameObject:
   m_ObjectHideFlags: 0
@@ -6399,8 +6389,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ede3e87ea55ead24a9e453b38fc33c34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  menuUI: {fileID: 0}
+  mainMenuUI: {fileID: 0}
   gameUI: {fileID: 0}
+  menuUI: {fileID: 0}
+  endUI: {fileID: 0}
+  backButton: {fileID: 0}
+  menuButton: {fileID: 0}
   stepCounter: {fileID: 7020358391383130122}
   mistakeCounter: {fileID: 7020358391576270598}
   hintCounter: {fileID: 7020358389828335768}
