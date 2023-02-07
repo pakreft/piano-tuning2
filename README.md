@@ -1,4 +1,4 @@
-# ReadMe PianoTune
+# PianoTune
 
 PianoTune is an application that teaches you how to tune a (grand) piano yourself. 
 In daily life, this can be a time consuming and expensive thing to do. 
