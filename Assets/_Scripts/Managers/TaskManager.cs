@@ -5,9 +5,17 @@ public class TaskManager : MonoBehaviour
     public static TaskManager I { get; private set; }
 
     [SerializeField] private Task[] tasks;
-    private Task currentTask;
-    private int index;
     
+    public int TasksLength { get; private set; }
+    public Task CurrentTask { get; private set; }
+    
+    [HideInInspector] public int hintCounter;
+    [HideInInspector] public int mistakeCounter;
+    [HideInInspector] public bool hintUsed;
+    
+    private int _index;
+    
+    // ----- Unity Functions -----
     private void Awake()
     {
         if (I != null)
@@ -15,34 +23,70 @@ public class TaskManager : MonoBehaviour
             Destroy(this);
             return;
         }
-        if (tasks.Length <= 0)
-        {
-            Debug.LogError("TaskManager: tasks has no elements", this);
-        }
-
+        
         I = this;
-        index = 0;
-        currentTask = tasks[index];
+        enabled = false;
     }
 
-    private void SetupTask()
+    private void OnEnable()
     {
-        currentTask.onSetupTask.Invoke();
-    }
-
-    public void EndTask()
-    {
-        currentTask.onEndTask.Invoke();
-        index++;
-
-        if (index >= tasks.Length)
+        _index = 0;
+        TasksLength = tasks.Length;
+        
+        if (TasksLength <= 0)
         {
-            Debug.Log("Alls Tasks completed.");
+            Debug.LogError("TaskManager: tasks[] has no elements", this);
             return;
         }
         
-        currentTask = tasks[index];
-        SetupTask();
+        CurrentTask = tasks[_index];
+        hintCounter = 0;
+        mistakeCounter = 0;
+        
+        UIManager.I.SetHintCounter(hintCounter);
+        UIManager.I.SetMistakeCounter(mistakeCounter);
+        
+        SetupCurrentTask();
+    }
+
+    private void OnDisable()
+    {
+        //ToDo: Show end cart
+        
+    }
+
+    // ----- Functions -----
+    public void TaskCompleted()
+    {
+        Debug.Log("TASK COMPLETED MANAGER");
+        EndCurrentTask();
+        
+        // Check if that was last task
+        if (_index + 1 >= tasks.Length)
+        {
+            enabled = false;
+            return;
+        }
+        
+        // Set next task as new current task
+        _index++;
+        CurrentTask = tasks[_index];
+        
+        SetupCurrentTask();
     }
     
+    private void SetupCurrentTask()
+    {
+        CurrentTask.onSetupTask.Invoke();
+        hintUsed = false;
+        
+        UIManager.I.SetBackButtonActive(false);
+        UIManager.I.SetInfoText(CurrentTask.instructionsMsg);
+        UIManager.I.SetStepCounter(_index + 1);
+    }
+
+    private void EndCurrentTask()
+    {
+        CurrentTask.onEndTask.Invoke();
+    }
 }
