@@ -1671,7 +1671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 561792961}
   m_Layer: 0
-  m_Name: TasksCompletedUI
+  m_Name: EndcartUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6615,7 +6615,7 @@ MonoBehaviour:
   mainMenuUI: {fileID: 513765431}
   gameUI: {fileID: 1605766081}
   inGameMenuUI: {fileID: 1605766081}
-  tasksCompletedUI: {fileID: 561792960}
+  endCart: {fileID: 0}
   showHintBtn: {fileID: 7020358389789125654}
   backToInstructionMsgBtn: {fileID: 2012554700}
   stepForwardBtn: {fileID: 596202800}

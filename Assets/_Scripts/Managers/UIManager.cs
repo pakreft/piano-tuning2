@@ -11,7 +11,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public GameObject mainMenuUI;
     [SerializeField] public GameObject gameUI;
     [SerializeField] public GameObject inGameMenuUI;
-    [SerializeField] public GameObject tasksCompletedUI;
+    [SerializeField] public GameObject endCart;
     
     [Header("Buttons")]
     [SerializeField] public Button showHintBtn;
