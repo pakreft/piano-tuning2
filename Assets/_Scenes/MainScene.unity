@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5557,7 +5557,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10ed502cc3d36542a6ba5270f5c83a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tasks: []
+  tasks:
+  - instructionsMsg: 
+    hintMsg: 
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
   evOnDisable:
     m_PersistentCalls:
       m_Calls: []
