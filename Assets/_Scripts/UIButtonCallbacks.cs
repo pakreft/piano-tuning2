@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class UIButtonCallbacks : MonoBehaviour
 {
@@ -68,7 +69,7 @@ public class UIButtonCallbacks : MonoBehaviour
 
     public void OnBackToMainMenuBtn()
     {
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     
     // ----- Demo Mode Specific Buttons -----
