@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class UIButtonCallbacks : MonoBehaviour
 {
-    public static UIButtonCallbacks I { get; private set; }
+    public static UIButtonCallbacks I { get; set; }
 
     
     private void Awake()
@@ -64,7 +64,13 @@ public class UIButtonCallbacks : MonoBehaviour
     
     public void OnRestartBtn()
     {
+        Loader.I = null;
+        TaskManager.I = null;
+        I = null;
+        UIManager.I = null;
         
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        SceneManager.sceneLoaded += Loader.I.OnSceneLoaded;
     }
 
     public void OnBackToMainMenuBtn()

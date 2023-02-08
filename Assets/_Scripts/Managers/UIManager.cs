@@ -4,7 +4,7 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
-    public static UIManager I { get; private set; }
+    public static UIManager I { get; set; }
     
     
     [Header("UI Parent GameObjects")]
@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] public Button backToInstructionMsgBtn;
     [SerializeField] public Button stepForwardBtn;
     [SerializeField] public Button stepBackwardBtn;
+    [SerializeField] public Button inGameMenuBtn;
     
     [Header("TMP's")]
     [SerializeField] public TextMeshProUGUI stepCounter;

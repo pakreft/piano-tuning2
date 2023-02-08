@@ -3,7 +3,7 @@ using UnityEngine.Events;
 
 public class TaskManager : MonoBehaviour
 {
-    public static TaskManager I { get; private set; }
+    public static TaskManager I { get; set; }
 
     
     [SerializeField] private Task[] tasks;
@@ -34,7 +34,6 @@ public class TaskManager : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.Log("dwadawdada");
         _index = 0;
         TasksLength = tasks.Length;
         

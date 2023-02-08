@@ -1,10 +1,12 @@
 using UnityEngine;
-using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Loader : MonoBehaviour
 {
-    public static Loader I { get; private set; }
-
+    public static Loader I { get; set; }
+    
+    
+    private bool _trainingMode;
     
     private void Awake()
     {
@@ -33,6 +35,8 @@ public class Loader : MonoBehaviour
     
     public void LoadDemoMode()
     {
+        _trainingMode = false;
+        
         UIManager.I.mainMenuUI.SetActive(false);
         UIManager.I.gameUI.SetActive(true);
         
@@ -41,6 +45,8 @@ public class Loader : MonoBehaviour
 
     private void LoadTrainingModeEndcart()
     {
+        _trainingMode = true;
+        
         UIManager.I.endCart.SetActive(true);
         
         // Set hints and mistakes onto endcard TODO: use seperate fields for text and counter
@@ -48,7 +54,19 @@ public class Loader : MonoBehaviour
         UIManager.I.endcartMistakeCounter.text = "MISTAKES MADE:    " + TaskManager.I.mistakeCounter;
 
         // Disable buttons in In-Game UI
-        UIManager.I.inGameMenuUI.gameObject.GetComponent<Button>().enabled = false;
+        UIManager.I.inGameMenuBtn.enabled = false;
         UIManager.I.showHintBtn.enabled = false;
+    }
+
+    public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (_trainingMode == true)
+        {
+            LoadTrainingMode();
+        }
+        else
+        {
+            LoadDemoMode();
+        }
     }
 }
