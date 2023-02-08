@@ -4,7 +4,7 @@ public class AddPianoKeySounds : MonoBehaviour
 {
     public AudioClip[] sounds;
     
-    private void Awake()
+    public void AddSoundsToKeys()
     {
         int i = 0;
         
