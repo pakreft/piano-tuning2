@@ -24,6 +24,9 @@ public class UIManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI mistakeCounter;
     [SerializeField] public TextMeshProUGUI hintCounter;
     [SerializeField] public TextMeshProUGUI infoText;
+    [SerializeField] public TextMeshProUGUI endcartHintCounter;
+    [SerializeField] public TextMeshProUGUI endcartMistakeCounter;
+
     
     private void Awake()
     {

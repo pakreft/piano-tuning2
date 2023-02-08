@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Loader : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Loader : MonoBehaviour
         UIManager.I.stepBackwardBtn.gameObject.SetActive(false);
         
         TaskManager.I.gameObject.SetActive(true);
+        TaskManager.I.evOnDisable.AddListener(LoadTrainingModeEndcart);
     }
     
     public void LoadDemoMode()
@@ -35,5 +37,18 @@ public class Loader : MonoBehaviour
         UIManager.I.gameUI.SetActive(true);
         
         TaskManager.I.gameObject.SetActive(true);
+    }
+
+    private void LoadTrainingModeEndcart()
+    {
+        UIManager.I.endCart.SetActive(true);
+        
+        // Set hints and mistakes onto endcard TODO: use seperate fields for text and counter
+        UIManager.I.endcartHintCounter.text = "HINTS USED:      " + TaskManager.I.hintCounter;
+        UIManager.I.endcartMistakeCounter.text = "MISTAKES MADE:    " + TaskManager.I.mistakeCounter;
+
+        // Disable buttons in In-Game UI
+        UIManager.I.inGameMenuUI.gameObject.GetComponent<Button>().enabled = false;
+        UIManager.I.showHintBtn.enabled = false;
     }
 }

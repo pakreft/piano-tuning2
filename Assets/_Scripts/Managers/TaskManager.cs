@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class TaskManager : MonoBehaviour
 {
@@ -9,7 +10,8 @@ public class TaskManager : MonoBehaviour
     
     public int TasksLength { get; private set; }
     public Task CurrentTask { get; private set; }
-    
+
+    [HideInInspector] public UnityEvent evOnDisable;
     [HideInInspector] public int hintCounter;
     [HideInInspector] public int mistakeCounter;
     [HideInInspector] public bool hintUsed;
@@ -54,6 +56,7 @@ public class TaskManager : MonoBehaviour
 
     private void OnDisable()
     {
+        evOnDisable.Invoke();
         //ToDo: Show end cart (with different text while in demo mode)
     }
 
@@ -81,7 +84,6 @@ public class TaskManager : MonoBehaviour
         CurrentTask.onSetupTask.Invoke();
         hintUsed = false;
         
-        UIManager.I.backToInstructionMsgBtn.gameObject.SetActive(false);
         UIManager.I.SetInfoText(CurrentTask.instructionsMsg);
         UIManager.I.SetStepCounter(_index + 1);
     }
@@ -89,5 +91,6 @@ public class TaskManager : MonoBehaviour
     private void EndCurrentTask()
     {
         CurrentTask.onEndTask.Invoke();
+        UIManager.I.backToInstructionMsgBtn.gameObject.SetActive(false);
     }
 }
