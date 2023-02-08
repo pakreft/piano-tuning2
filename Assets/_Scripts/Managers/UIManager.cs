@@ -6,14 +6,24 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager I { get; private set; }
     
-    [Header("Textfields")]
-    [SerializeField] private TextMeshProUGUI stepCounter;
-    [SerializeField] private TextMeshProUGUI mistakeCounter;
-    [SerializeField] private TextMeshProUGUI hintCounter;
-    [SerializeField] private TextMeshProUGUI infoText;
-
+    
+    [Header("UI Parent GameObjects")]
+    [SerializeField] public GameObject mainMenuUI;
+    [SerializeField] public GameObject gameUI;
+    [SerializeField] public GameObject inGameMenuUI;
+    [SerializeField] public GameObject tasksCompletedUI;
+    
     [Header("Buttons")]
-    [SerializeField] private Button backButton;
+    [SerializeField] public Button showHintBtn;
+    [SerializeField] public Button backToInstructionMsgBtn;
+    [SerializeField] public Button stepForwardBtn;
+    [SerializeField] public Button stepBackwardBtn;
+    
+    [Header("TMP's")]
+    [SerializeField] public TextMeshProUGUI stepCounter;
+    [SerializeField] public TextMeshProUGUI mistakeCounter;
+    [SerializeField] public TextMeshProUGUI hintCounter;
+    [SerializeField] public TextMeshProUGUI infoText;
     
     private void Awake()
     {
@@ -24,46 +34,10 @@ public class UIManager : MonoBehaviour
         }
         
         I = this;
+        Debug.Log("UIManager initialized", this);
     }
     
-    // ----- Button Callbacks -----
-    public void OnClickMenu()
-    {
-        //ToDo: 
-    }
-    
-    public void OnClickShowHint()
-    {
-        if (TaskManager.I.hintUsed == false)
-        {
-            //TODO: Sound
-            TaskManager.I.hintCounter++;
-            SetHintCounter(TaskManager.I.hintCounter);
-            TaskManager.I.hintUsed = true;
-        }
-        
-        infoText.text = TaskManager.I.CurrentTask.hintMsg;
-        backButton.gameObject.SetActive(true);
-    }
-
-    public void OnClickLeftArrow()
-    {
-        
-    }
-
-    public void OnClickRightArrow()
-    {
-        
-    }
-
-    public void OnClickBack()
-    {
-        //TODO: little sound
-        infoText.text = TaskManager.I.CurrentTask.instructionsMsg;
-        backButton.gameObject.SetActive(false);
-    }
-    
-    // ----- Setter -----
+    // ----- TMP Setter -----
     public void SetStepCounter(int c)
     {
         stepCounter.text = c + "/" + TaskManager.I.TasksLength;
@@ -82,10 +56,5 @@ public class UIManager : MonoBehaviour
     public void SetInfoText(string text)
     {
         infoText.text = text;
-    }
-
-    public void SetBackButtonActive(bool x)
-    {
-        backButton.gameObject.SetActive(x);
     }
 }
