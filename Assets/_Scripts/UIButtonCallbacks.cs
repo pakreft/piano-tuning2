@@ -64,6 +64,7 @@ public class UIButtonCallbacks : MonoBehaviour
     
     public void OnRestartBtn()
     {
+        Debug.Log("restart");
         Loader.I = null;
         TaskManager.I = null;
         I = null;
@@ -87,6 +88,14 @@ public class UIButtonCallbacks : MonoBehaviour
 
     public void OnStepBackwardsBtn()
     {
+        TaskManager.I.index--;
         
+        if (TaskManager.I.index == 0)
+            UIManager.I.stepBackwardBtn.gameObject.SetActive(false);
+        else
+            UIManager.I.stepBackwardBtn.gameObject.SetActive(true);
+
+        TaskManager.I.CurrentTask = TaskManager.I.tasks[TaskManager.I.index];
+        TaskManager.I.SetupCurrentTask();
     }
 }
