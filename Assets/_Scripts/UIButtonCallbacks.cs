@@ -70,7 +70,7 @@ public class UIButtonCallbacks : MonoBehaviour
         UIManager.I = null;
         
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        SceneManager.sceneLoaded += Loader.I.OnSceneLoaded;
+        //SceneManager.sceneLoaded += Loader.I.OnSceneLoaded;
     }
 
     public void OnBackToMainMenuBtn()
@@ -81,7 +81,8 @@ public class UIButtonCallbacks : MonoBehaviour
     // ----- Demo Mode Specific Buttons -----
     public void OnStepForwardBtn()
     {
-        
+        UIManager.I.stepBackwardBtn.gameObject.SetActive(true);
+        TaskManager.I.TaskCompleted();
     }
 
     public void OnStepBackwardsBtn()

@@ -1,22 +1,23 @@
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 public class TaskManager : MonoBehaviour
 {
     public static TaskManager I { get; set; }
 
     
-    [SerializeField] private Task[] tasks;
+    [SerializeField] public Task[] tasks;
     
     public int TasksLength { get; private set; }
-    public Task CurrentTask { get; private set; }
+    public Task CurrentTask { get; set; }
 
     [HideInInspector] public UnityEvent evOnDisable;
     [HideInInspector] public int hintCounter;
     [HideInInspector] public int mistakeCounter;
     [HideInInspector] public bool hintUsed;
     
-    private int _index;
+    [HideInInspector] public int index;
     
     // ----- Unity Functions -----
     private void Awake()
@@ -34,7 +35,7 @@ public class TaskManager : MonoBehaviour
 
     private void OnEnable()
     {
-        _index = 0;
+        index = 0;
         TasksLength = tasks.Length;
         
         if (TasksLength <= 0)
@@ -43,7 +44,7 @@ public class TaskManager : MonoBehaviour
             return;
         }
         
-        CurrentTask = tasks[_index];
+        CurrentTask = tasks[index];
         hintCounter = 0;
         mistakeCounter = 0;
         
@@ -55,7 +56,7 @@ public class TaskManager : MonoBehaviour
 
     private void OnDisable()
     {
-        evOnDisable.Invoke();
+        evOnDisable?.Invoke();
         //ToDo: Show end cart (with different text while in demo mode)
     }
 
@@ -65,29 +66,29 @@ public class TaskManager : MonoBehaviour
         EndCurrentTask();
         
         // Check if that was last task
-        if (_index + 1 >= tasks.Length)
+        if (index + 1 >= tasks.Length)
         {
             enabled = false;
             return;
         }
         
         // Set next task as new current task
-        _index++;
-        CurrentTask = tasks[_index];
+        index++;
+        CurrentTask = tasks[index];
         
         SetupCurrentTask();
     }
     
-    private void SetupCurrentTask()
+    public void SetupCurrentTask()
     {
         CurrentTask.onSetupTask.Invoke();
         hintUsed = false;
         
         UIManager.I.SetInfoText(CurrentTask.instructionsMsg);
-        UIManager.I.SetStepCounter(_index + 1);
+        UIManager.I.SetStepCounter(index + 1);
     }
 
-    private void EndCurrentTask()
+    public void EndCurrentTask()
     {
         CurrentTask.onEndTask.Invoke();
         UIManager.I.backToInstructionMsgBtn.gameObject.SetActive(false);

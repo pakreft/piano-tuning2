@@ -39,7 +39,8 @@ public class Loader : MonoBehaviour
         
         UIManager.I.mainMenuUI.SetActive(false);
         UIManager.I.gameUI.SetActive(true);
-        
+        UIManager.I.stepBackwardBtn.gameObject.SetActive(false);
+
         TaskManager.I.gameObject.SetActive(true);
     }
 
