@@ -7073,7 +7073,216 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tasks:
-  - instructionsMsg: 
+  - instructionsMsg: Welcome to Trainingmode of PianoTune. This mode will teach you
+      how to tune a piano yourself by following given instructions and testing your
+      knowledge from Demomode.
+    hintMsg: '-'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: The instructions will be displayed at the bottom.
+    hintMsg: '-'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: If you need help click on the magnifying glass in the left corner.
+    hintMsg: '-'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Are you ready to test your abilities?
+    hintMsg: '-'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Collect all the needed tools for the tuning process. You need
+      a tuning hammer, mutes and an electronic tuning device.
+    hintMsg: 'Tip: The tuning hammer looks like a mixture between a normal hammer
+      and a screw driver. A mute is a small object made of felt or rubber to mute
+      strings. The electronic tuning device looks like an old radio.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: 'Identify the note that is out of tune. '
+    hintMsg: 'Tip: C'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: "Let\u2019s start with tuning the note by getting closer to
+      the strings."
+    hintMsg: 'Tip: Click on the arrow above to swich positions.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: 'Place mutes between the strings and press the key to identify
+      the off note string. '
+    hintMsg: 'Tip: Place the mutes in a way that only one string can vibrate freely.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Place the tuning hammer on the right peg.
+    hintMsg: 'Tip: The peg that is connected to the off tune string. '
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Match the pitch of the electronic tuning device by turning the
+      peg with the tuning hammer. (Use your mouse wheel here)
+    hintMsg: 'Tip: Scroll with your mouse wheel until the pitch is in the intended
+      area.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Remove the mutes.
+    hintMsg: 'Tip: Click on the mutes to remove them.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Remove the tuning hammer.
+    hintMsg: 'Tip: Click on the tuning hammer to remove it.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Test your piano.
+    hintMsg: 'Tip: Switch positions again and test the keys.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: 'Welcome to Demomode of PianoTune. This mode will demonstrate
+      you step by step how to tune a piano yourself. '
+    hintMsg: '-'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: The instructions will be displayed at the bottom.
+    hintMsg: '-'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Collect all the needed tools for the tuning process. You need
+      a tuning hammer, mutes and an electronic tuning device.
+    hintMsg: 'Tip: The tuning hammer looks like a mixture between a normal hammer
+      and a screw driver. A mute is a small object made of felt or rubber to mute
+      strings. The electronic tuning device looks like an old radio.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: 'Identify the note that is out of tune. '
+    hintMsg: 'Tip: C'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: "Let\u2019s start with tuning the note by getting closer to
+      the strings."
+    hintMsg: 'Tip: Click on the arrow above to swich positions.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: 'Place mutes between the strings and press the key to identify
+      the off note string. '
+    hintMsg: 'Tip: Place the mutes in a way that only one string can vibrate freely.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Place the tuning hammer on the right peg.
+    hintMsg: 'Tip: The peg that is connected to the off tune string. '
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Match the pitch of the electronic tuning device by turning the
+      peg with the tuning hammer. (Use your mouse wheel here)
+    hintMsg: 'Tip: Scroll with your mouse wheel until the pitch is in the intended
+      area.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Remove the mutes.
+    hintMsg: 'Tip: Click on the mutes to remove them.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Remove the tuning hammer.
+    hintMsg: 'Tip: Click on the tuning hammer to remove it.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Test your piano.
+    hintMsg: 'Tip: Switch positions again and test the keys.'
+    onSetupTask:
+      m_PersistentCalls:
+        m_Calls: []
+    onEndTask:
+      m_PersistentCalls:
+        m_Calls: []
+  - instructionsMsg: Are you ready to test yourself in Trainingmode?
     hintMsg: 
     onSetupTask:
       m_PersistentCalls:
