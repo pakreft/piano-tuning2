@@ -31,12 +31,9 @@ public class Loader : MonoBehaviour
     
     public void LoadDemoMode()
     {
-        // UI
-      //  menuUI.SetActive(false);
-      //  gameUI.SetActive(true);
-       // stepBackButton.SetActive(true);
-      //  stepForwardButton.SetActive(true);
+        UIManager.I.mainMenuUI.SetActive(false);
+        UIManager.I.gameUI.SetActive(true);
         
-        //TaskManager.I.gameObject.SetActive(true);
+        TaskManager.I.gameObject.SetActive(true);
     }
 }
