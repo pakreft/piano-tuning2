@@ -5501,9 +5501,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tasks: []
+  evOnDisable:
+    m_PersistentCalls:
+      m_Calls: []
   hintCounter: 0
   mistakeCounter: 0
   hintUsed: 0
+  index: 0
 --- !u!1 &1535607884
 GameObject:
   m_ObjectHideFlags: 0
@@ -6614,16 +6618,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenuUI: {fileID: 513765431}
   gameUI: {fileID: 1605766081}
-  inGameMenuUI: {fileID: 1605766081}
-  endCart: {fileID: 0}
+  inGameMenuUI: {fileID: 1035754008}
+  endCart: {fileID: 561792960}
   showHintBtn: {fileID: 7020358389789125654}
   backToInstructionMsgBtn: {fileID: 2012554700}
   stepForwardBtn: {fileID: 596202800}
   stepBackwardBtn: {fileID: 434451842}
+  inGameMenuBtn: {fileID: 7020358390065030598}
   stepCounter: {fileID: 7020358391383130122}
   mistakeCounter: {fileID: 7020358391576270598}
   hintCounter: {fileID: 7020358389828335768}
   infoText: {fileID: 7020358390093811629}
+  endcartHintCounter: {fileID: 4929560236820705950}
+  endcartMistakeCounter: {fileID: 7680185126251048977}
 --- !u!1 &2012554698
 GameObject:
   m_ObjectHideFlags: 0
