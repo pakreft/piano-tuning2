@@ -4,6 +4,7 @@ public class TaskManager : MonoBehaviour
 {
     public static TaskManager I { get; private set; }
 
+    
     [SerializeField] private Task[] tasks;
     
     public int TasksLength { get; private set; }
@@ -25,10 +26,13 @@ public class TaskManager : MonoBehaviour
         }
         
         I = this;
+        Debug.Log("TaskManager initialized and set to inactive now", this);
+        gameObject.SetActive(false);
     }
 
     private void OnEnable()
     {
+        Debug.Log("dwadawdada");
         _index = 0;
         TasksLength = tasks.Length;
         
@@ -50,13 +54,12 @@ public class TaskManager : MonoBehaviour
 
     private void OnDisable()
     {
-        //ToDo: Show end cart
+        //ToDo: Show end cart (with different text while in demo mode)
     }
 
     // ----- Functions -----
     public void TaskCompleted()
     {
-        Debug.Log("TASK COMPLETED MANAGER");
         EndCurrentTask();
         
         // Check if that was last task
@@ -78,7 +81,7 @@ public class TaskManager : MonoBehaviour
         CurrentTask.onSetupTask.Invoke();
         hintUsed = false;
         
-        UIManager.I.SetBackButtonActive(false);
+        UIManager.I.backToInstructionMsgBtn.gameObject.SetActive(false);
         UIManager.I.SetInfoText(CurrentTask.instructionsMsg);
         UIManager.I.SetStepCounter(_index + 1);
     }
